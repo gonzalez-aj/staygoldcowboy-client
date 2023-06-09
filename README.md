@@ -6,7 +6,7 @@
 ___
 ## Getting Started
 ### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
+#### 1. To get started, click the GREEN "Use this Template" button at the top of [this template repo](https://github.com/codetracker-learning/TEMPLATE-nextjs-withauth-django)
 <img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
 
 #### 2. Make sure YOUR github account is selected in the dropdown and name your project
