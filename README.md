@@ -1,3 +1,11 @@
+# Stay Gold, Cowboy
+
+## Server-Side: Python Django
+-[server side code](https://github.com/AngieMGonzalez/staygoldcowboy-server)
+
+## ERD
+- [MVP ERD made with dbdiagrom.io](https://dbdiagram.io/d/64809033722eb77494910894)
+
 # React/Next.js Django Auth Template
 
 ## Topics
