@@ -43,6 +43,7 @@ function Home() {
               <ArtCard
                 id={art.id}
                 title={art.title}
+                creationDate={art.creation_date}
                 imageUrl={art.image_url}
                 uid={art.fan_id?.uid}
                 onUpdate={getAllTheArts}

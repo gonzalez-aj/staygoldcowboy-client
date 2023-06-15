@@ -13,7 +13,7 @@ const ArtCard = ({
     <Card.Header>{title}</Card.Header>
     <Card.Body>
       <Link href={`/arts/${id}`} passHref>
-        <Card.Title>Created On:{creationDate}</Card.Title>
+        <Card.Title>Creation Date: {creationDate}</Card.Title>
       </Link>
       <Card.Text> Image URL: {imageUrl}</Card.Text>
       <Card.Img src={imageUrl} alt={title} />
