@@ -33,7 +33,6 @@ function RegisterForm({ user, updateUser }) {
           <Form.Control
             name="firstName"
             placeholder="Enter your first name"
-            autoComplete="off"
             onChange={handleChange}
             required
           />
@@ -43,7 +42,6 @@ function RegisterForm({ user, updateUser }) {
           <Form.Control
             name="lastName"
             placeholder="Enter your last name"
-            autoComplete="off"
             onChange={handleChange}
             required
           />
