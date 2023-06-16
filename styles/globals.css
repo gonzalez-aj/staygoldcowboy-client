@@ -1,4 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
@@ -9,7 +12,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: rgb(240, 233, 233);
   text-decoration: none;
 }
 
@@ -18,5 +21,10 @@ a {
 }
 
 body {
-  background-color: #253ccf77;
+  background-color: #384ccc77;
+  color:bisque;
+}
+
+#font-white {
+  color: bisque;
 }

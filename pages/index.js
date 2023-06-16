@@ -34,8 +34,8 @@ function Home() {
     <>
       <Head><title>Stay Gold, Cowboy</title></Head>
       <br />
-      <h2> Welcome Partner, {user.first_name} {user.last_name} </h2>
-      <h5>Here&apos;s the art:</h5>
+      <h2 className="text-6xl"> Welcome Partner, {user.first_name} {user.last_name} </h2>
+      <h5 className="text-4xl">Here&apos;s the art:</h5>
       {noArts && <h4>There&apos;s no art here yet</h4>}
       <div className="text-center my-4">
         <div className="d-flex flex-wrap">
