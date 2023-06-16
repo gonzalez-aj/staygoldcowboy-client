@@ -37,22 +37,22 @@ function Home() {
       <h2 className="text-6xl"> Welcome Partner, {user.first_name} {user.last_name} </h2>
       <h5 className="text-4xl">Here&apos;s the art:</h5>
       {noArts && <h4>There&apos;s no art here yet</h4>}
-      <div className="text-center my-4">
-        <div className="d-flex flex-wrap">
-          {arts.map((art) => (
-            <section key={`art--${art.id}`} className="art-card">
-              <ArtCard
-                id={art.id}
-                title={art.title}
-                creationDate={art.creation_date}
-                imageUrl={art.image_url}
-                uid={art.fan_id?.uid}
-                onUpdate={getAllTheArts}
-              />
-            </section>
-          ))}
-        </div>
+      {/* <div className="text-center my-4"> */}
+      <div className="flex flex-wrap">
+        {arts.map((art) => (
+          <section key={`art--${art.id}`} className="art-card">
+            <ArtCard
+              id={art.id}
+              title={art.title}
+              creationDate={art.creation_date}
+              imageUrl={art.image_url}
+              uid={art.fan_id?.uid}
+              onUpdate={getAllTheArts}
+            />
+          </section>
+        ))}
       </div>
+      {/* </div> */}
     </>
   );
 }

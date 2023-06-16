@@ -9,6 +9,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* background-color: #384ccc;
+  height: 200vh; */
 }
 
 a {
@@ -20,11 +22,12 @@ a {
   box-sizing: border-box;
 }
 
-body {
-  background-color: #384ccc77;
-  color:bisque;
-}
-
 #font-white {
   color: bisque;
+}
+
+body {
+  background-color: #5061d2;
+  color:bisque;
+  min-height: 100vh;
 }
