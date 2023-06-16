@@ -1,26 +1,58 @@
-import { Button } from 'react-bootstrap';
-import { signOut } from '../utils/auth';
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
 import { useAuth } from '../utils/context/authContext';
+import getArts from '../utils/data/artData';
+import ArtCard from '../components/art/ArtCard';
 
 function Home() {
   const { user } = useAuth();
+  const [arts, setArts] = useState([]);
+  const [noArts, setNoArts] = useState(false);
+
+  const getAllTheArts = () => {
+    getArts(user.uid)
+      .then((data) => {
+        if (data && data.length > 0) {
+          setNoArts(false);
+          setArts(data);
+        } else {
+          setNoArts(true);
+          setArts([]);
+        }
+      })
+      .catch(() => {
+        setArts(true);
+      });
+  };
+
+  useEffect(() => {
+    getAllTheArts();
+  }, [user]);
+
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Hello {user.fbUser.displayName}! </h1>
-      <p>Your Cowboy name: {user.first_name} {user.last_name}</p>
-      <p>Click the button below to logout!</p>
-      <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
-        Sign Out
-      </Button>
-    </div>
+    <>
+      <Head><title>Stay Gold, Cowboy</title></Head>
+      <br />
+      <h2> Welcome to Partner, {user.full_name} </h2>
+      <h3>Here&apos;s the art:</h3>
+      {noArts && <h4>There&apos;s no art here yet</h4>}
+      <div className="text-center my-4">
+        <div className="d-flex flex-wrap">
+          {arts.map((art) => (
+            <section key={`art--${art.id}`} className="art-card">
+              <ArtCard
+                id={art.id}
+                title={art.title}
+                creationDate={art.creation_date}
+                imageUrl={art.image_url}
+                uid={art.fan_id?.uid}
+                onUpdate={getAllTheArts}
+              />
+            </section>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
 
