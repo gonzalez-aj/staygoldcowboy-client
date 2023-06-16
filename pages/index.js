@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useAuth } from '../utils/context/authContext';
-import getArts from '../utils/data/artData';
 import ArtCard from '../components/art/ArtCard';
+import { getArts } from '../utils/data/artData';
 
 function Home() {
   const { user } = useAuth();

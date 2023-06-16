@@ -52,4 +52,8 @@ const getArtByTag = (tagId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export default { getArts, createArt, getArtByTag };
+export {
+  getArts,
+  createArt,
+  getArtByTag,
+};
