@@ -7,18 +7,19 @@ const TagCard = ({
   id,
   medium,
 }) => (
-  <Card className="text-center">
-    <Card.Header>{medium}</Card.Header>
-    <Card.Body>
-      <Link href={`/tags/${id}`} passHref>
-        <Card.Title>Medium: {medium}</Card.Title>
-      </Link>
-      <Link href={`/tags/edit/${id}`} passHref>
-        <Card.Link href="#">Edit</Card.Link>
-      </Link><Card.Link href="#">Delete</Card.Link>
-    </Card.Body>
-    <Card.Footer className="text-muted">Medium</Card.Footer>
-  </Card>
+  <>
+    <Card className="text-center">
+      <Card.Body>
+        <Card.Title>{medium}</Card.Title>
+      </Card.Body>
+      <Card.Footer className="text-muted">
+        <Link href={`/tags/edit/${id}`} passHref>
+          <Card.Link href="#">Edit</Card.Link>
+        </Link><Card.Link href="#">Delete</Card.Link>
+      </Card.Footer>
+    </Card>
+    <br />
+  </>
 );
 
 TagCard.propTypes = {
