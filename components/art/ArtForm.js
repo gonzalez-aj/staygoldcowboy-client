@@ -53,11 +53,11 @@ const ArtForm = () => {
   };
 
   useEffect(() => { getAllTags(); },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []);
 
   return (
     <>
-      {console.warn('formInput', formInput)}
       <Form onSubmit={handleSubmit}>
         <div className="mb-6">
           <div>
