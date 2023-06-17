@@ -58,7 +58,6 @@ const ArtForm = () => {
 
   return (
     <>
-      {console.warn('formInput', formInput)}
       <Form onSubmit={handleSubmit}>
         <div className="mb-6">
           <div>

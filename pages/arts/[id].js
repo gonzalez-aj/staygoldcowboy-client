@@ -16,17 +16,11 @@ export default function ViewArtsDetails() {
 
   useEffect(() => {
     getOneArt();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
     <>
-      {console.warn(artDetails)}
-      {/* <ArtCard
-        id={artDetails.id}
-        title={artDetails.title}
-        creationDate={artDetails.creation_date}
-        imageUrl={artDetails.image_url}
-      /> */}
       <Head>
         <title>View {artDetails.title}</title>
       </Head>
