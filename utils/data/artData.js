@@ -18,12 +18,12 @@ const getArts = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const createArt = (art) => new Promise((resolve, reject) => {
+const createArt = (art, uid) => new Promise((resolve, reject) => {
   fetch(`${clientCredentials.databaseURL}/arts`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `${art.uid}`,
+      Authorization: `${uid}`,
     },
     body: JSON.stringify(art),
   })
@@ -52,8 +52,27 @@ const getArtByTag = (tagId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleArt = (artId) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/arts/${artId}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((artObject) => {
+      if (artObject) {
+        resolve(artObject);
+      } else {
+        resolve({});
+      }
+    })
+    .catch(reject);
+});
+
 export {
   getArts,
   createArt,
   getArtByTag,
+  getSingleArt,
 };

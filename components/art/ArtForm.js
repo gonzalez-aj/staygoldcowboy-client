@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import { Button, FloatingLabel, Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { createArt } from '../../utils/data/artData';
 import getTags from '../../utils/data/tagData';
+import { useAuth } from '../../utils/context/authContext';
 
 const initialState = {
   title: '',
@@ -12,11 +12,12 @@ const initialState = {
   tagId: [],
 };
 
-const ArtForm = ({ user }) => {
+const ArtForm = () => {
   const [formInput, setFormInput] = useState(initialState);
   const [tags, setTags] = useState([]);
   const router = useRouter();
   const { id } = router.query;
+  const { user } = useAuth();
 
   const handleInputChange = (e) => {
     const { name, value, options } = e.target;
@@ -56,6 +57,7 @@ const ArtForm = ({ user }) => {
 
   return (
     <>
+      {console.warn('formInput', formInput)}
       <Form onSubmit={handleSubmit}>
         <div className="mb-6">
           <div>
@@ -70,39 +72,32 @@ const ArtForm = ({ user }) => {
               required
             />
           </div>
+          <br />
           <div>
-            <div className="">Image URL</div>
-            <FloatingLabel controlId="floatingInput1" className="mb-3">
-              <Form.Control
-                type="text"
-                placeholder="www.image.com"
-                name="imageUrl"
-                value={formInput.imageUrl}
-                onChange={handleInputChange}
-                required
-              />
-            </FloatingLabel>
             <Form.Label htmlFor="imageUrl" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image URL</Form.Label>
             <input
               type="text"
               placeholder="www.image.com"
               className="input input-bordered input-success w-full max-w-s"
+              name="imageUrl"
               value={formInput.imageUrl}
               onChange={handleInputChange}
               required
             />
           </div>
+          <br />
           <div>
             <Form.Label htmlFor="creationDate" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Created On:</Form.Label>
             <input
               type="date"
-              placeholder="Type here"
+              name="creationDate"
               className="input input-bordered input-info w-full max-w-s"
               value={formInput.creationDate}
               onChange={handleInputChange}
               required
             />
           </div>
+          <br />
           <div>
             <Form.Label htmlFor="tag" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tags:</Form.Label>
             <select
@@ -110,6 +105,7 @@ const ArtForm = ({ user }) => {
               name="tagId"
               value={formInput.tagId}
               onChange={handleInputChange}
+              style={{ height: '100px', width: '50%' }}
               required
             >
               <option value="">Select a Tag</option>
@@ -123,12 +119,6 @@ const ArtForm = ({ user }) => {
       </Form>
     </>
   );
-};
-
-ArtForm.propTypes = {
-  user: PropTypes.shape({
-    uid: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default ArtForm;

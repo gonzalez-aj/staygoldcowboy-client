@@ -7,6 +7,7 @@ const NewArt = () => {
   return (
     <>
       <div>
+        <br />
         <div>
           <p className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white">Upload New Art</p>
           <br />
