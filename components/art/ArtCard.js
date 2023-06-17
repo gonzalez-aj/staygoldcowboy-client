@@ -10,19 +10,26 @@ const ArtCard = ({
   imageUrl,
 }) => (
   <>
-    <Card className="text-center">
-      <Card.Header>{title}</Card.Header>
-      <Card.Body>
-        <Link href={`/arts/${id}`} passHref>
-          <Card.Title>{title}</Card.Title>
-        </Link>
-        <Card.Img src={imageUrl} alt={title} />
-        <Link href={`/arts/edit/${id}`} passHref>
-          <Card.Link href="#">Edit</Card.Link>
-        </Link><Card.Link href="#">Delete</Card.Link>
-      </Card.Body>
-      <Card.Footer className="text-muted">Creation Date: {creationDate}</Card.Footer>
-    </Card>
+    <div className="card w-96 bg-base-100 shadow-xl">
+      <figure className="px-10 pt-10">
+        <Card.Img src={imageUrl} alt={title} className="xl" />
+      </figure>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title" id="font-white">{title}</h2>
+        <p className="card-text" id="font-white">Creation Date: {creationDate}</p>
+        <div className="card-actions">
+          <Link href={`/arts/${id}`} passHref>
+            <Card.Link>Details</Card.Link>
+          </Link>
+          <Link href={`/arts/edit/${id}`} passHref>
+            <Card.Link href="#">Edit</Card.Link>
+          </Link>
+          <Link href={`/arts/edit/${id}`} passHref>
+            <Card.Link href="#">Delete</Card.Link>
+          </Link>
+        </div>
+      </div>
+    </div>
     <br />
   </>
 );
