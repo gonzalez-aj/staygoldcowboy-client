@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { createArt } from '../../utils/data/artData';
 import getTags from '../../utils/data/tagData';
 
@@ -19,13 +19,23 @@ const ArtForm = ({ user }) => {
   const { id } = router.query;
 
   const handleInputChange = (e) => {
-    setFormInput((prevState) => ({
-      ...prevState,
-      [e.target.name]:
-        e.target.name === 'tagId'
-          ? [Number(e.target.value)]
-          : e.target.value,
-    }));
+    const { name, value, options } = e.target;
+
+    if (name === 'tagId') {
+      const selectedTags = Array.from(options)
+        .filter((option) => option.selected)
+        .map((option) => Number(option.value));
+
+      setFormInput((prevState) => ({
+        ...prevState,
+        [name]: selectedTags,
+      }));
+    } else {
+      setFormInput((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -61,11 +71,22 @@ const ArtForm = ({ user }) => {
             />
           </div>
           <div>
+            <div className="">Image URL</div>
+            <FloatingLabel controlId="floatingInput1" className="mb-3">
+              <Form.Control
+                type="text"
+                placeholder="www.image.com"
+                name="imageUrl"
+                value={formInput.imageUrl}
+                onChange={handleInputChange}
+                required
+              />
+            </FloatingLabel>
             <Form.Label htmlFor="imageUrl" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image URL</Form.Label>
             <input
               type="text"
               placeholder="www.image.com"
-              className="input input-bordered input-info w-full max-w-s"
+              className="input input-bordered input-success w-full max-w-s"
               value={formInput.imageUrl}
               onChange={handleInputChange}
               required
