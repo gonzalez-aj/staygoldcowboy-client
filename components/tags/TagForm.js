@@ -44,7 +44,6 @@ const TagForm = ({ tagObj }) => {
 
   return (
     <>
-      {console.warn('tagObj', tagObj)}
       <Form onSubmit={handleSubmit}>
         <div className="mb-6">
           <Form.Label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">

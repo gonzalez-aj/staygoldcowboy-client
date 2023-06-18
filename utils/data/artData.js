@@ -82,10 +82,22 @@ const updateArt = (art) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const deleteArt = (artId) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/arts/${artId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
   getArts,
   createArt,
   getArtByTag,
   getSingleArt,
   updateArt,
+  deleteArt,
 };
