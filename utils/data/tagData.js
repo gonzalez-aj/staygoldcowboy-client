@@ -82,10 +82,22 @@ const updateTag = (tag) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const deleteTag = (tagId) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/tags/${tagId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
   getTags,
   createTag,
   getArtsByTag,
   getSingleTag,
   updateTag,
+  deleteTag,
 };

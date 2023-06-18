@@ -38,6 +38,7 @@ function ShowTags() {
             key={tag.id}
             id={tag.id}
             medium={tag.medium}
+            onUpdate={getAllTheTags}
           />
         ))}
       </div>
