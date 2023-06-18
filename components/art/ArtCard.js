@@ -11,7 +11,7 @@ export default function ArtCard({
   imageUrl,
   onUpdate,
 }) {
-  const deleteThisTag = () => {
+  const deleteThisArt = () => {
     if (window.confirm(`🛑 Sure you wanna delete ${title}?`)) {
       deleteArt(id).then(() => onUpdate());
     }
@@ -33,7 +33,7 @@ export default function ArtCard({
               <Card.Link href="#">Edit</Card.Link>
             </Link>
             <Link href="/" passHref>
-              <Card.Link onClick={deleteThisTag}>Delete</Card.Link>
+              <Card.Link onClick={deleteThisArt}>Delete</Card.Link>
             </Link>
           </div>
         </div>
