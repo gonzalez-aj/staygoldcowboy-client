@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { Button, Form, InputGroup } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { createTag } from '../../utils/data/tagData';
 import { useAuth } from '../../utils/context/authContext';
 
@@ -38,11 +38,11 @@ const TagForm = () => {
   return (
     <>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-6">
+        <div className="mb-6">
           <Form.Label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             Medium
           </Form.Label>
-          <InputGroup
+          <input
             className="input input-bordered input-info w-full max-w-s"
             type="text"
             placeholder="Enter medium"
@@ -51,7 +51,7 @@ const TagForm = () => {
             onChange={handleInputChange}
             required
           />
-        </Form.Group>
+        </div>
         <Button variant="primary" type="submit">
           Submit
         </Button>
