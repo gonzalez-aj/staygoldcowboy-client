@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import TagForm from '../../../components/tags/TagForm';
-import { getTags } from '../../../utils/data/tagData';
+import { getSingleTag } from '../../../utils/data/tagData';
 
 export default function EditTag() {
   const [tag, setTag] = useState({});
@@ -10,7 +10,7 @@ export default function EditTag() {
   const { id } = router.query;
 
   useEffect(() => {
-    getTags().then(setTag);
+    getSingleTag().then(setTag);
   }, [id]);
 
   return (
