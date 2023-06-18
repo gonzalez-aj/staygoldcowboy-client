@@ -78,7 +78,6 @@ const updateArt = (art) => new Promise((resolve, reject) => {
     },
     body: JSON.stringify(art),
   })
-    .then((response) => response.json())
     .then((data) => resolve(data))
     .catch(reject);
 });

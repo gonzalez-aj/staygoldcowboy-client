@@ -28,13 +28,13 @@ const ArtForm = ({ artObj }) => {
   useEffect(() => {
     if (artObj.id) {
       setFormInput({
+        id: artObj.id,
         title: artObj.title,
         imageUrl: artObj.image_url,
         creationDate: artObj.creation_date,
         tagId: artObj.tag.map((tag) => tag.id),
       });
     }
-    console.warn('formInput', formInput);
     getAllTags();
   },
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -145,10 +145,10 @@ ArtForm.propTypes = {
     title: PropTypes.string,
     image_url: PropTypes.string,
     creation_date: PropTypes.string,
-    tag: PropTypes.shape([{
+    tag: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number,
       medium: PropTypes.string,
-    }]),
+    })),
   }),
 };
 
