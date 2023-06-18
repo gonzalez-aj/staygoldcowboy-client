@@ -42,9 +42,9 @@ const getArtByTag = (tagId) => new Promise((resolve, reject) => {
     },
   })
     .then((response) => response.json())
-    .then((artObject) => {
-      if (artObject) {
-        resolve(Object.values(artObject));
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
       } else {
         resolve([]);
       }

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 const TagCard = ({
   id,
@@ -11,9 +11,11 @@ const TagCard = ({
     <div className="bg-neutral text-neutral-content">
       <div className="card-body items-center text-center">
         <h2 className="card-title">
-          <Button className="btn">
-            {medium}
-          </Button>
+          <Link href={`/tags/${id}`} passHref>
+            <div className="btn">
+              #{medium}
+            </div>
+          </Link>
         </h2>
         <div className="card-actions justify-end">
           <Link href={`/tags/edit/${id}`} passHref>

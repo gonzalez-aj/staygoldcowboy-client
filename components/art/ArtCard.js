@@ -6,7 +6,7 @@ import { Card } from 'react-bootstrap';
 const ArtCard = ({
   id,
   title,
-  creationDate,
+  // creationDate,
   imageUrl,
 }) => (
   <>
@@ -16,7 +16,7 @@ const ArtCard = ({
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title" id="font-white">{title}</h2>
-        <p className="card-text" id="font-white">Creation Date: {creationDate}</p>
+        {/* <p className="card-text" id="font-white">Creation Date: {creationDate}</p> */}
         <div className="card-actions">
           <Link href={`/arts/${id}`} passHref>
             <Card.Link>Details</Card.Link>
@@ -37,7 +37,7 @@ const ArtCard = ({
 ArtCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  creationDate: PropTypes.string.isRequired,
+  // creationDate: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
 };
 

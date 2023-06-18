@@ -35,7 +35,7 @@ const createTag = (tag, uid) => new Promise((resolve, reject) => {
 });
 
 const getArtsByTag = (tagId) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/arts.json?orderBy="tagId"&equalTo="${tagId}"`, {
+  fetch(`${clientCredentials.databaseURL}/arts?tag=${tagId}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -52,8 +52,27 @@ const getArtsByTag = (tagId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleTag = (tagId) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/tags/${tagId}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((artObject) => {
+      if (artObject) {
+        resolve(artObject);
+      } else {
+        resolve({});
+      }
+    })
+    .catch(reject);
+});
+
 export {
   getTags,
   createTag,
   getArtsByTag,
+  getSingleTag,
 };
