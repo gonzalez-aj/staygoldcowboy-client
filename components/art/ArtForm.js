@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Head from 'next/head';
 import { createArt, updateArt } from '../../utils/data/artData';
 import { getTags } from '../../utils/data/tagData';
 import { useAuth } from '../../utils/context/authContext';
@@ -28,10 +27,14 @@ const ArtForm = ({ artObj }) => {
 
   useEffect(() => {
     if (artObj.id) {
-      setFormInput(artObj);
-    } else {
-      setFormInput(initialState);
+      setFormInput({
+        title: artObj.title,
+        imageUrl: artObj.image_url,
+        creationDate: artObj.creation_date,
+        tagId: artObj.tag.map((tag) => tag.id),
+      });
     }
+    console.warn('formInput', formInput);
     getAllTags();
   },
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -70,9 +73,7 @@ const ArtForm = ({ artObj }) => {
 
   return (
     <>
-      <Head>
-        <title>{artObj.id ? 'Update' : 'Upload'} Art</title>
-      </Head>
+      {/* {console.warn('artObj', artObj)} */}
       <h2 className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white">{artObj.id ? 'Update' : 'Upload'} Art</h2>
       <br />
       <Form onSubmit={handleSubmit}>
@@ -142,8 +143,12 @@ ArtForm.propTypes = {
   artObj: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
-    imageUrl: PropTypes.string,
-    creationDate: PropTypes.string,
+    image_url: PropTypes.string,
+    creation_date: PropTypes.string,
+    tag: PropTypes.shape([{
+      id: PropTypes.number,
+      medium: PropTypes.string,
+    }]),
   }),
 };
 
