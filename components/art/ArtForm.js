@@ -73,7 +73,6 @@ const ArtForm = ({ artObj }) => {
 
   return (
     <>
-      {/* {console.warn('artObj', artObj)} */}
       <h2 className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white">{artObj.id ? 'Update' : 'Upload'} Art</h2>
       <br />
       <Form onSubmit={handleSubmit}>

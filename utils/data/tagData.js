@@ -70,9 +70,22 @@ const getSingleTag = (tagId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const updateTag = (tag) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/tags/${tag.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(tag),
+  })
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
   getTags,
   createTag,
   getArtsByTag,
   getSingleTag,
+  updateTag,
 };

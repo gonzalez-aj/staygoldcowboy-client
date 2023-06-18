@@ -1,17 +1,26 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { createTag } from '../../utils/data/tagData';
-import { useAuth } from '../../utils/context/authContext';
+import PropTypes from 'prop-types';
+import { createTag, updateTag } from '../../utils/data/tagData';
 
 const initialState = {
   medium: '',
 };
 
-const TagForm = () => {
+const TagForm = ({ tagObj }) => {
   const [formInput, setFormInput] = useState(initialState);
   const router = useRouter();
-  const { user } = useAuth();
+
+  useEffect(() => {
+    if (tagObj.id) {
+      setFormInput({
+        id: tagObj.id,
+        medium: tagObj.medium,
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tagObj]);
 
   const handleInputChange = (e) => {
     setFormInput((prevState) => ({
@@ -22,22 +31,20 @@ const TagForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createTag(formInput).then((response) => {
-      if (response) {
-        router.push('/tags');
-      }
-    });
-  };
-
-  useEffect(() => {
-    if (!user?.uid) {
-      router.push('/login');
+    if (tagObj.id) {
+      updateTag(formInput).then(() => router.push('/tags'));
+    } else {
+      createTag(formInput).then((tag) => {
+        if (tag) {
+          router.push('/tags');
+        }
+      });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  };
 
   return (
     <>
+      {console.warn('tagObj', tagObj)}
       <Form onSubmit={handleSubmit}>
         <div className="mb-6">
           <Form.Label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -60,6 +67,17 @@ const TagForm = () => {
       <br />
     </>
   );
+};
+
+TagForm.propTypes = {
+  tagObj: PropTypes.shape({
+    id: PropTypes.number,
+    medium: PropTypes.string,
+  }),
+};
+
+TagForm.defaultProps = {
+  tagObj: initialState,
 };
 
 export default TagForm;
