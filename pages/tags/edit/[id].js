@@ -10,7 +10,7 @@ export default function EditTag() {
   const { id } = router.query;
 
   useEffect(() => {
-    getSingleTag().then(setTag);
+    getSingleTag(id).then(setTag);
   }, [id]);
 
   return (
