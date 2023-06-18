@@ -26,7 +26,7 @@ export default function ViewArtsDetails() {
       </Head>
       <div>
         <br />
-        <p className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white"> {artDetails.title}Deets</p>
+        <p className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white"> {artDetails.title} Deets</p>
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">

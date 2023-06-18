@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { createArt } from '../../utils/data/artData';
-import getTags from '../../utils/data/tagData';
+import { getTags } from '../../utils/data/tagData';
 import { useAuth } from '../../utils/context/authContext';
 
 const initialState = {
