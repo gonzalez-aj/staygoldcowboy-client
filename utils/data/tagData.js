@@ -18,4 +18,23 @@ const getTags = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export default getTags;
+const createTag = (tag, uid) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/tags`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `${uid}`,
+    },
+    body: JSON.stringify(tag),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      resolve(data);
+    })
+    .catch(reject);
+});
+
+export {
+  getTags,
+  createTag,
+};
