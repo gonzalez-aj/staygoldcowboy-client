@@ -70,9 +70,23 @@ const getSingleArt = (artId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const updateArt = (art) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/arts/${art.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(art),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
   getArts,
   createArt,
   getArtByTag,
   getSingleArt,
+  updateArt,
 };

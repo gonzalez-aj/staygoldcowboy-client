@@ -1,7 +1,9 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { createArt } from '../../utils/data/artData';
+import PropTypes from 'prop-types';
+import Head from 'next/head';
+import { createArt, updateArt } from '../../utils/data/artData';
 import { getTags } from '../../utils/data/tagData';
 import { useAuth } from '../../utils/context/authContext';
 
@@ -12,16 +14,31 @@ const initialState = {
   tagId: [],
 };
 
-const ArtForm = () => {
+const ArtForm = ({ artObj }) => {
   const [formInput, setFormInput] = useState(initialState);
   const [tags, setTags] = useState([]);
   const router = useRouter();
   const { id } = router.query;
   const { user } = useAuth();
 
+  const getAllTags = () => {
+    getTags(id)
+      .then((response) => setTags(response));
+  };
+
+  useEffect(() => {
+    if (artObj.id) {
+      setFormInput(artObj);
+    } else {
+      setFormInput(initialState);
+    }
+    getAllTags();
+  },
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [artObj]);
+
   const handleInputChange = (e) => {
     const { name, value, options } = e.target;
-
     if (name === 'tagId') {
       const selectedTags = Array.from(options)
         .filter((option) => option.selected)
@@ -41,23 +58,23 @@ const ArtForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createArt(formInput, user.uid)
-      .then((art) => {
-        router.push(`/arts/${art.id}`);
-      });
+    if (artObj.id) {
+      updateArt(formInput).then(() => router.push(`/arts/${artObj.id}`));
+    } else {
+      createArt(formInput, user.uid)
+        .then((art) => {
+          router.push(`/arts/${art.id}`);
+        });
+    }
   };
-
-  const getAllTags = () => {
-    getTags(id)
-      .then((response) => setTags(response));
-  };
-
-  useEffect(() => { getAllTags(); },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []);
 
   return (
     <>
+      <Head>
+        <title>{artObj.id ? 'Update' : 'Upload'} Art</title>
+      </Head>
+      <h2 className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white">{artObj.id ? 'Update' : 'Upload'} Art</h2>
+      <br />
       <Form onSubmit={handleSubmit}>
         <div className="mb-6">
           <div>
@@ -115,10 +132,23 @@ const ArtForm = () => {
             </select>
           </div>
         </div>
-        <Button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</Button>
+        <Button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{artObj.id ? 'Update' : 'Submit'}</Button>
       </Form>
     </>
   );
+};
+
+ArtForm.propTypes = {
+  artObj: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    imageUrl: PropTypes.string,
+    creationDate: PropTypes.string,
+  }),
+};
+
+ArtForm.defaultProps = {
+  artObj: initialState,
 };
 
 export default ArtForm;
