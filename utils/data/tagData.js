@@ -34,7 +34,26 @@ const createTag = (tag, uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getArtsByTag = (tagId) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/arts.json?orderBy="tagId"&equalTo="${tagId}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((artObject) => {
+      if (artObject) {
+        resolve(Object.values(artObject));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
   getTags,
   createTag,
+  getArtsByTag,
 };
