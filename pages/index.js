@@ -37,14 +37,13 @@ function Home() {
     <>
       <Head><title>Stay Gold, Cowboy</title></Head>
       <br />
-      <h2 className="text-6xl"> Welcome Partner, {user.first_name} {user.last_name} </h2>
+      <h2 className="grid place-items-center place-center text-6xl"> Stay Gold Cowboy, {user.first_name} {user.last_name} </h2>
       <Button onClick={() => {
         router.push('/arts/new');
       }}
       >
         Add Art
       </Button>
-      <h5 className="text-4xl">Here&apos;s the art:</h5>
       {noArts && <h4>There&apos;s no art here yet</h4>}
       <div className="text-center my-4">
         <div className="flex flex-wrap">

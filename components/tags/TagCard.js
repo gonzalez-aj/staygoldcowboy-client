@@ -17,7 +17,7 @@ export default function TagCard({
   return (
     <>
       <div className="bg-neutral text-neutral-content">
-        <div className="card-body items-center text-center">
+        <div className="card-body items-center text-center p-3">
           <h2 className="card-title">
             <Link href={`/tags/${id}`} passHref>
               <div className="btn">
