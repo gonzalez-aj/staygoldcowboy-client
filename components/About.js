@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
+import Image from 'next/image';
 import menalex from '../images/menalex.png';
 
 export default function About() {
