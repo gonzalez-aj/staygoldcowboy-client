@@ -3,10 +3,10 @@ import Head from 'next/head';
 import { Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { useAuth } from '../utils/context/authContext';
+import ArtCard from '../components/art/ArtCard';
 import { getArts } from '../utils/data/artData';
-import ArtCarousel from '../components/art/ArtCarousel';
 
-function Home() {
+function AllArt() {
   const { user } = useAuth();
   const [arts, setArts] = useState([]);
   const [noArts, setNoArts] = useState(false);
@@ -37,7 +37,7 @@ function Home() {
     <>
       <Head><title>Stay Gold, Cowboy</title></Head>
       <br />
-      <h2 className="grid place-items-center place-center text-6xl"> Stay Gold, Cowboy {user.first_name} {user.last_name} </h2>
+      <h2 className="grid place-items-center place-center text-6xl"> Stay Gold Cowboy, {user.first_name} {user.last_name} </h2>
       <Button onClick={() => {
         router.push('/arts/new');
       }}
@@ -45,11 +45,11 @@ function Home() {
         Add Art
       </Button>
       {noArts && <h4>There&apos;s no art here yet</h4>}
-      <div>
-        <div>
+      <div className="text-center my-4 night">
+        <div className="flex around flex-wrap">
           {arts.map((art) => (
-            <section key={`art--${art.id}`}>
-              <ArtCarousel
+            <section key={`art--${art.id}`} className="art-card">
+              <ArtCard
                 id={art.id}
                 title={art.title}
                 creationDate={art.creation_date}
@@ -65,4 +65,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AllArt;
