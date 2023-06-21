@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Button } from 'react-bootstrap';
-import { useRouter } from 'next/router';
 import { useAuth } from '../utils/context/authContext';
 import { getArts } from '../utils/data/artData';
 import ArtCarousel from '../components/art/ArtCarousel';
@@ -10,7 +8,6 @@ function Home() {
   const { user } = useAuth();
   const [arts, setArts] = useState([]);
   const [noArts, setNoArts] = useState(false);
-  const router = useRouter();
 
   const getAllTheArts = () => {
     getArts(user.uid)
@@ -36,17 +33,9 @@ function Home() {
   return (
     <>
       <Head><title>Stay Gold, Cowboy</title></Head>
-      <br />
-      <h2 className="grid place-items-center place-center text-6xl"> Stay Gold, Cowboy {user.first_name} {user.last_name} </h2>
-      <Button onClick={() => {
-        router.push('/arts/new');
-      }}
-      >
-        Add Art
-      </Button>
       {noArts && <h4>There&apos;s no art here yet</h4>}
-      <div>
-        <div>
+      <div className="pt-10">
+        <div className="carousel carousel-center rounded-box">
           {arts.map((art) => (
             <section key={`art--${art.id}`}>
               <ArtCarousel
