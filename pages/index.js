@@ -45,8 +45,8 @@ function Home() {
         Add Art
       </Button>
       {noArts && <h4>There&apos;s no art here yet</h4>}
-      <div className="text-center my-4">
-        <div className="flex flex-wrap">
+      <div className="text-center my-4 night">
+        <div className="flex around flex-wrap">
           {arts.map((art) => (
             <section key={`art--${art.id}`} className="art-card">
               <ArtCard
