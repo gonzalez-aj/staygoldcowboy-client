@@ -24,21 +24,18 @@ export default function ViewArtsDetails() {
       <Head>
         <title>View {artDetails.title}</title>
       </Head>
-      <div className="grid place-items-center">
+      <div className="grid place-items-center py-3">
         <p className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white"> {artDetails.title} Deets</p>
       </div>
-      <div className="grid h-screen place-items-center">
+      <div className="w-full">
         <Image src={artDetails.image_url} alt={artDetails.title} />
       </div>
-      <div className="grid place-items-center">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          {/* <figure className="px-10 pt-10">
-          <Card.Img src={artDetails.image_url} alt={artDetails.title} className="xl" />
-        </figure> */}
+      <div className="grid place-items-center mt-4 pb-9">
+        <div className="card bg-base-100 shadow-xl">
           <div className="card-body items-center text-center">
-            <h2 className="card-title" id="font-white">{artDetails.title}</h2>
-            <p className="card-text" id="font-white">Creation Date: {artDetails.creation_date}</p>
-            <div className="card-text" id="font-white">
+            <h2 className="card-title text-white">{artDetails.title}</h2>
+            <p className="card-text text-white">Creation Date: {artDetails.creation_date}</p>
+            <div className="card-text text-white">
               Tags:
               {artDetails.tag && artDetails.tag.length > 0 ? (
                 artDetails.tag?.map((tag) => <p key={tag.id}>#{tag.medium}</p>)
