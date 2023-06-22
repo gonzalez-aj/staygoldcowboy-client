@@ -41,3 +41,7 @@ body {
   color:bisque;
   min-height: 100vh;
 }
+
+.carousel-item-content {
+  margin-top: 100px; /* CarouselCard.js */
+}

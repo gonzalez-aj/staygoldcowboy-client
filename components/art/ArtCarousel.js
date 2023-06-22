@@ -35,8 +35,8 @@ export default function ArtCarousel() {
       {noArts && <h4>There&apos;s no art here yet</h4>}
       <Carousel interval={null}>
         {arts.map((art) => (
-          <Carousel.Item>
-            <CarouselCard key={art.id} artObj={art} />
+          <Carousel.Item key={art.id}>
+            <CarouselCard artObj={art} />
           </Carousel.Item>
         ))}
       </Carousel>

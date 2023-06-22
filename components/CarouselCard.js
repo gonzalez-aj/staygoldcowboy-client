@@ -6,13 +6,15 @@ import { Carousel } from 'react-bootstrap';
 export default function CarouselCard({ artObj }) {
   return (
     <>
-      <div>
+      <div className="d-flex justify-content-center">
         <Image
           src={artObj.image_url}
           alt={artObj.title}
-          height={300}
-          width={300}
+          height={400}
+          width={400}
         />
+      </div>
+      <div className="carousel-item-content">
         <Carousel.Caption>
           <h3>{artObj.title}</h3>
         </Carousel.Caption>
