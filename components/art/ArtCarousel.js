@@ -1,39 +1,45 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { deleteArt } from '../../utils/data/artData';
+import React, { useEffect, useState } from 'react';
+import { Carousel } from 'react-bootstrap';
+import CarouselCard from '../CarouselCard';
+import { useAuth } from '../../utils/context/authContext';
+import { getArts } from '../../utils/data/artData';
 
-export default function ArtCarousel({
-  id,
-  title,
-  // creationDate,
-  imageUrl,
-  onUpdate,
-}) {
-  const deleteThisArt = () => {
-    if (window.confirm(`🛑 Sure you wanna delete ${title}?`)) {
-      deleteArt(id).then(() => onUpdate());
-    }
+export default function ArtCarousel() {
+  const { user } = useAuth();
+  const [arts, setArts] = useState([]);
+  const [noArts, setNoArts] = useState(false);
+
+  const getAllTheArts = () => {
+    getArts(user.uid)
+      .then((data) => {
+        if (data && data.length > 0) {
+          setNoArts(false);
+          setArts(data);
+        } else {
+          setNoArts(true);
+          setArts([]);
+        }
+      })
+      .catch(() => {
+        setArts(true);
+      });
   };
+
+  useEffect(() => {
+    getAllTheArts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
-      <div className="carousel-item">
-        <Image src={imageUrl} alt={title} className="box" height={400} width={400} />
-        <div className="card-compact card-actions bg-base-100 flex flex-col flex-grow">
-          <Link className="link" href={`/arts/${id}`} passHref>Details </Link>
-          <Link className="link" href={`/arts/edit/${id}`} passHref>Edit </Link>
-          <Link className="link" href="/" onClick={deleteThisArt} passHref>Delete</Link>
-        </div>
-      </div>
+      {noArts && <h4>There&apos;s no art here yet</h4>}
+      <Carousel interval={null}>
+        {arts.map((art) => (
+          <Carousel.Item>
+            <CarouselCard key={art.id} artObj={art} />
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </>
   );
 }
-
-ArtCarousel.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  // creationDate: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  onUpdate: PropTypes.func.isRequired,
-};
