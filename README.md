@@ -1,29 +1,12 @@
 # Stay Gold, Cowboy
 
-## Server-Side: Python Django
-- [server side code](https://github.com/AngieMGonzalez/staygoldcowboy-server)
-
-## ERD
-- [MVP ERD made with dbdiagrom.io](https://dbdiagram.io/d/64809033722eb77494910894)
-
-## Wireframe
-- [Wireframe created with Figma](https://www.figma.com/file/hOEfUiFeL3cMBTDBOCiQML/Stay-Gold%2C-Cowboy?type=design&node-id=0%3A1&t=ZmzcDnEjDJpCFnqX-1)
-
-# React/Next.js Django Auth Template
-
 ## Topics
 - [Get Started](#getting-started)
 - [Starting the Project](#starting-the-project)
 ___
 ## Getting Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of [this template repo](https://github.com/codetracker-learning/TEMPLATE-nextjs-withauth-django)
-<img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
-
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-
-#### 3. Clone your new repo to your local machine
-#### 4. Go to the **NEXT** section
+## Server-Side: Python Django
+- [server side code](https://github.com/AngieMGonzalez/staygoldcowboy-server)
 
 ## Starting the Project
 1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
@@ -36,19 +19,95 @@ ___
 1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
 1. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-### If you see this, you are set to go!
-<img width="450" alt="Screen Shot 2022-07-06 at 1 07 27 PM" src="https://user-images.githubusercontent.com/29741570/177615077-9b6a75bc-0260-4d29-bb88-bd95a3140687.png">
+## Topics
+- [Overview](#overview)
+- [MVP Features](#mvp-features)
+- [Video Walkthrough of MVP](#video-walkthrough-of-mvp)
+- [Relevant Links](#relevant-links)
+- [Code Snippet](#code-snippet)
+- [Project Screenshots](#project-screenshots)
+- [Get Started](#get-started)
+- [Tech and Frameworks Used](#tech-and-frameworks-used)
+- [Auth](#Google-Auth)
+- [Contributors](#contributors)
+___
+## Overview
+- The ideal user for Stay Gold, Cowboy is a fan of Sonatore
+- Fans can sign in with Google authentication and upload their favorite image URLs of Sonatore's art
+- Fans can organize the artwork by tags
+
+## MVP Features
+- Fans of Sonatore sign in with Firebase Google authentication
+- Fans can browse all the art and all the tags
+- Fans can create, read, update and delete art and tags
+- Fans can create read update and delete their own snippet ideas
+- Art has information regarding creation date, tags, and image url
+- Fans can filter art by tags
+
+## Video Walkthrough
+
+## Relevant Links
+- [Figma Wireframes for MVP](https://www.figma.com/file/hOEfUiFeL3cMBTDBOCiQML/Stay-Gold%2C-Cowboy?type=design&node-id=0%3A1&t=ZmzcDnEjDJpCFnqX-1)
+- [Project Board](https://github.com/users/AngieMGonzalez/projects/2)
+
+## ERD
+
+- [MVP ERD made with dbdiagrom.io](https://dbdiagram.io/d/64809033722eb77494910894)
+<img width="500" alt="Stay Gold, Cowboy MVP ERD" src="https://user-images.githubusercontent.com/114124374/247436507-046a0270-51ee-4d4e-95a8-e74861da2cf6.png">
+
+- Assumption: Art can have many tags, and tags can be associated with many pieces of art. 
+
+## Code Snippet
+Set PropTypes
+```
+ArtForm.propTypes = {
+  artObj: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    image_url: PropTypes.string,
+    creation_date: PropTypes.string,
+    tag: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      medium: PropTypes.string,
+    })),
+  }),
+};
+```
 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Project Screenshots
 
-**NOTES:** 
-- If you see the following error, you did not follow all the setup steps correctly and failed to add your Firebase creds. Go back and do that NOW.
 
-<img width="1043" alt="Screen Shot 2022-07-06 at 11 18 45 AM" src="https://user-images.githubusercontent.com/29741570/177612501-c2628f18-4bbd-4de9-aae6-27ffba1172d6.png">
-        
-## Learn More about Next.js
-To learn more about Next.js, take a look at the following resources:
+## Get Started
+1. Create a [Firebase](https://firebase.google.com/) project and set up authentication. 
+1. Clone Stay Gold, Cowboy to your local server
+```
+git@github.com:AngieMGonzalez/staygoldcowboy-client.git
+```
+1. Create a `.env` file at the root of the project
+1. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created `.env` file
+1. Import sample data found in `data` folder in to the Realtime Database 
+1. From your command line, be in the root directory and `run npm install` OR `npm i` for short
+1. Then, run `npm run prepare`
+1. To start Stay Golden, Cowboy run `npm run dev`
+1. Open [http://localhost:3000](http://localhost:3000) with your browser
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Tech and Frameworks Used
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
+![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+TailwindCSS
+Daisy UI
+
+### Google Auth
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+
+## Contributors
+- [Angie Gonzalez](https://github.com/AngieMGonzalez)
+- Badges from [Alexandre Sanlim](https://github.com/alexandresanlim/Badges4-README.md-Profile#see-more-repositories)
+- React/Next.js Django Auth [template from Nashville Software School](https://github.com/codetracker-learning/TEMPLATE-nextjs-withauth-django)
