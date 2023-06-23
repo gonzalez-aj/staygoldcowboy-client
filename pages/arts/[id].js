@@ -25,9 +25,9 @@ export default function ViewArtsDetails() {
         <title>View {artDetails.title}</title>
       </Head>
       <div className="grid place-items-center py-3">
-        <p className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white"> {artDetails.title} Deets</p>
+        <p className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white"> Details for: {artDetails.title}</p>
       </div>
-      <div className="w-full">
+      <div className="w-full grid place-items-center">
         <Image src={artDetails.image_url} alt={artDetails.title} />
       </div>
       <div className="grid place-items-center mt-4 pb-9">

@@ -44,9 +44,11 @@ const TagForm = ({ tagObj }) => {
 
   return (
     <>
+      <h2 className="max-w-lg text-5xl font-semibold leading-normal text-gray-900 dark:text-white">{tagObj.id ? 'Update' : 'Create'} Tag</h2>
+      <br />
       <Form onSubmit={handleSubmit}>
         <div className="mb-6">
-          <Form.Label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <Form.Label htmlFor="title" className="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">
             Medium
           </Form.Label>
           <input
@@ -60,7 +62,7 @@ const TagForm = ({ tagObj }) => {
           />
         </div>
         <Button variant="primary" type="submit">
-          Submit
+          {tagObj.id ? 'Update' : 'Submit'}
         </Button>
       </Form>
       <br />

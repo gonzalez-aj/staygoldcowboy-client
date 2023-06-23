@@ -44,15 +44,15 @@ export default function NavBar() {
           </Button>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex text-2xl">
-        <ul className="menu menu-horizontal px-1 text-2xl">
+      <div className="navbar-center hidden lg:flex text-3xl">
+        <ul className="menu menu-horizontal px-1 text-3xl">
           <li><Link href="/art">Art</Link></li>
           <li><Link href="/arts/new">New Art</Link></li>
           <li><Link href="/tags">Tags</Link></li>
           <li><Link href="/tags/new">New Tag</Link></li>
         </ul>
       </div>
-      <div className="dropdown dropdown-end text-xl">
+      <div className="dropdown dropdown-end text-2xl">
         <Button className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
             <Image className="w-10 rounded-full" src={user?.fbUser?.photoURL} width={50} height={50} />
