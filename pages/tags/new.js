@@ -8,14 +8,9 @@ const NewTag = () => {
   return (
     <>
       <Head>
-        <title>Upload Art</title>
+        <title>Submit Tag</title>
       </Head>
       <div>
-        <br />
-        <div>
-          <p className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white">Create New Tag</p>
-          <br />
-        </div>
         <div>
           <TagForm user={user} />
         </div>

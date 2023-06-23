@@ -73,16 +73,16 @@ const ArtForm = ({ artObj }) => {
 
   return (
     <>
-      <h2 className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white">{artObj.id ? 'Update' : 'Upload'} Art</h2>
+      <h2 className="max-w-lg text-5xl font-semibold leading-normal text-gray-900 dark:text-white">{artObj.id ? 'Update' : 'Upload'} Art</h2>
       <br />
       <Form onSubmit={handleSubmit}>
-        <div className="mb-6">
+        <div className="mb-6 text-2xl">
           <div>
-            <Form.Label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</Form.Label>
+            <Form.Label htmlFor="title" className="block mb-2 text-l font-medium text-gray-900 dark:text-white">Title</Form.Label>
             <input
               type="text"
               placeholder="title"
-              className="input input-bordered input-info w-full max-w-s"
+              className="input input-bordered input-info w-full max-w-s text-l"
               name="title"
               value={formInput.title}
               onChange={handleInputChange}
@@ -91,11 +91,11 @@ const ArtForm = ({ artObj }) => {
           </div>
           <br />
           <div>
-            <Form.Label htmlFor="imageUrl" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image URL</Form.Label>
+            <Form.Label htmlFor="imageUrl" className="block mb-2 text-l font-medium text-gray-900 dark:text-white">Image URL</Form.Label>
             <input
               type="text"
               placeholder="www.image.com"
-              className="input input-bordered input-success w-full max-w-s"
+              className="input input-bordered input-success w-full max-w-s text-l"
               name="imageUrl"
               value={formInput.imageUrl}
               onChange={handleInputChange}
@@ -104,7 +104,7 @@ const ArtForm = ({ artObj }) => {
           </div>
           <br />
           <div>
-            <Form.Label htmlFor="creationDate" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Created On:</Form.Label>
+            <Form.Label htmlFor="creationDate" className="block mb-2 text-l font-medium text-gray-900 dark:text-white">Created On:</Form.Label>
             <input
               type="date"
               name="creationDate"
@@ -116,7 +116,7 @@ const ArtForm = ({ artObj }) => {
           </div>
           <br />
           <div>
-            <Form.Label htmlFor="tag" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tags:</Form.Label>
+            <Form.Label htmlFor="tag" className="block mb-2 text-l font-medium text-gray-900 dark:text-white">Tags:</Form.Label>
             <select
               multiple
               name="tagId"
@@ -132,7 +132,7 @@ const ArtForm = ({ artObj }) => {
             </select>
           </div>
         </div>
-        <Button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{artObj.id ? 'Update' : 'Submit'}</Button>
+        <Button type="submit" variant="primary">{artObj.id ? 'Update' : 'Submit'}</Button>
       </Form>
     </>
   );

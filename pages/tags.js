@@ -23,7 +23,7 @@ function ShowTags() {
     <>
       <Head><title>Tags</title></Head>
       <br />
-      <h1 className="text-5xl">Tags</h1>
+      <h1 className="text-6xl">Tags</h1>
       <br />
       <Button onClick={() => {
         router.push('/tags/new');
@@ -32,7 +32,7 @@ function ShowTags() {
         Add Tag
       </Button>
       <br />
-      <div className="d-flex flex-wrap justify-content-center">
+      <div className="d-flex flex-wrap justify-content-center pt-2">
         {tags.map((tag) => (
           <TagCard
             key={tag.id}

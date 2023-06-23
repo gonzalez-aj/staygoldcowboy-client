@@ -7,7 +7,7 @@ export default function About() {
     <>
       <h2 className="grid place-items-center place-center text-6xl pt-3 pb-0 mb-0"> About Stay Gold, Cowboy</h2>
       <div className="card card-compact w-128 bg-base-100 shadow-xl mt-10">
-        <figure><Image src={menalex} alt="Angie and Alex at Musicians Corner" /></figure>
+        <figure><Image src={menalex} alt="Angie and Alex at Musicians Corner" height={500} width={500} /></figure>
         <div className="card-body text-white">
           <p className="card-title">Photo by <a className="link" href="https://www.instagram.com/calvin_tigre/" target="_blank" rel="noopener noreferrer">Calvin Tigre</a></p>
           <p className="text-2xl font-semibold leading-normal text-gray-900 dark:text-white">Hi there.

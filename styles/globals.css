@@ -45,3 +45,10 @@ body {
 .carousel-item-content {
   margin-top: 100px; /* CarouselCard.js */
 }
+
+.dropdown-menu {
+  background-color: #212529;
+}
+.dropdown-item {
+  color: white;
+}
