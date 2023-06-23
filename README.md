@@ -1,9 +1,5 @@
 # Stay Gold, Cowboy
 
-## Topics
-- [Get Started](#getting-started)
-- [Starting the Project](#starting-the-project)
-___
 ## Getting Started
 ## Server-Side: Python Django
 - [server side code](https://github.com/AngieMGonzalez/staygoldcowboy-server)
