@@ -10,7 +10,7 @@ export default function CarouselCard({ artObj }) {
         <Image
           src={artObj.image_url}
           alt={artObj.title}
-          height={600}
+          height={650}
           width={600}
         />
       </div>
