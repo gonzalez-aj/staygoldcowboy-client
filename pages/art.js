@@ -35,9 +35,9 @@ function AllArt() {
 
   return (
     <>
-      <Head><title>Stay Gold, Cowboy</title></Head>
+      <Head><title>All Art</title></Head>
       <br />
-      <h2 className="grid place-items-center place-center text-6xl"> Stay Gold Cowboy, {user.first_name} {user.last_name} </h2>
+      <h2 className="grid place-items-center place-center text-6xl"> Stay Gold, Cowboy</h2>
       <Button onClick={() => {
         router.push('/arts/new');
       }}

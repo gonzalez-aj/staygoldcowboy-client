@@ -27,7 +27,7 @@ function RegisterForm({ user, updateUser }) {
   return (
     <>
       <Form onSubmit={handleSubmit}>
-        <Form.Text className="text-muted">What&apos;s your name cowboy?</Form.Text>
+        <Form.Text className="text-muted">What&apos;s your name, Partner?</Form.Text>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>First Name</Form.Label>
           <Form.Control

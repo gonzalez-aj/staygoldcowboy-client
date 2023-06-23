@@ -17,11 +17,12 @@ function Signin() {
         paddingBlock: '0 5rem',
       }}
     >
-      <h1>Hi there!</h1>
-      <p>Click the button below to login!</p>
+      <h1 className="text-2xl">Hi there, Partner</h1>
+      <p className="text-xl">Are you a Fan of Sonatore?</p>
       <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
-        Sign In
+        Join to see Sonatore&apos;s Art
       </Button>
+      <p className="text-xl">Don&apos;t forget to Stay Gold, Cowboy</p>
     </div>
   );
 }
