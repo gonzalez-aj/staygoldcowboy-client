@@ -26,9 +26,10 @@ function RegisterForm({ user, updateUser }) {
 
   return (
     <>
+      <br />
       <Form onSubmit={handleSubmit}>
-        <Form.Text className="text-muted">What&apos;s your name, Partner?</Form.Text>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Text className="text-white text-5xl pt-3">What&apos;s your name, Partner?</Form.Text>
+        <Form.Group className="mb-3 text-3xl" controlId="formBasicEmail">
           <Form.Label>First Name</Form.Label>
           <Form.Control
             name="firstName"
@@ -37,7 +38,7 @@ function RegisterForm({ user, updateUser }) {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3 text-3xl" controlId="formBasicEmail">
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             name="lastName"
