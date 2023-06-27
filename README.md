@@ -1,28 +1,16 @@
 # Stay Gold, Cowboy
 
-## Getting Started
 ## Server-Side: Python Django
 * ### *[server side code](https://github.com/AngieMGonzalez/staygoldcowboy-server)*
 
-## Starting the Project
-1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
-1. Create a `.env` file at the root of the project
-1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
-1. Copy over all of your Firebase values into the `.env` file.
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
-1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
-
 ## Topics
 - [Overview](#overview)
+- [Get Started](#get-started)
 - [MVP Features](#mvp-features)
 - [Video Walkthrough of MVP](#video-walkthrough-of-mvp)
 - [Relevant Links](#relevant-links)
 - [Code Snippet](#code-snippet)
 - [Project Screenshots](#project-screenshots)
-- [Get Started](#get-started)
 - [Tech and Frameworks Used](#tech-and-frameworks-used)
 - [Google Auth](#Google-Auth)
 - [Contributors](#contributors)
@@ -32,6 +20,30 @@ ___
 - Fans can sign in with Google authentication and upload their favorite image URLs of Sonatore's art
 - Fans can organize the artwork by tags
 
+## Get Started
+1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
+1. Clone Stay Gold, Cowboy to your local server
+```
+git@github.com:AngieMGonzalez/staygoldcowboy-client.git
+```
+1. Create a `.env` file at the root of the project
+1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
+1. Copy over all of your Firebase values into the `.env` file.
+1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
+1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
+1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
+1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
+1. Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+1. Create a [Firebase](https://firebase.google.com/) project and set up authentication. 
+1. Create a `.env` file at the root of the project
+1. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created `.env` file
+1. Import sample data found in `data` folder in to the Realtime Database 
+1. From your command line, be in the root directory and `run npm install` OR `npm i` for short
+1. Then, run `npm run prepare`
+1. To start Stay Golden, Cowboy run `npm run dev`
+1. Open [http://localhost:3000](http://localhost:3000) with your browser
+
 ## MVP Features
 - Fans of Sonatore sign in with Firebase Google authentication
 - Fans can browse all the art and all the tags
@@ -40,7 +52,7 @@ ___
 - Art has information regarding creation date, tags, and image url
 - Fans can filter art by tags
 
-## Video Walkthrough
+## Video Walkthrough of MVP
 
 ## Relevant Links
 - [Figma Wireframes for MVP](https://www.figma.com/file/hOEfUiFeL3cMBTDBOCiQML/Stay-Gold%2C-Cowboy?type=design&node-id=0%3A1&t=ZmzcDnEjDJpCFnqX-1)
@@ -72,21 +84,6 @@ ArtForm.propTypes = {
 
 
 ## Project Screenshots
-
-
-## Get Started
-1. Create a [Firebase](https://firebase.google.com/) project and set up authentication. 
-1. Clone Stay Gold, Cowboy to your local server
-```
-git@github.com:AngieMGonzalez/staygoldcowboy-client.git
-```
-1. Create a `.env` file at the root of the project
-1. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created `.env` file
-1. Import sample data found in `data` folder in to the Realtime Database 
-1. From your command line, be in the root directory and `run npm install` OR `npm i` for short
-1. Then, run `npm run prepare`
-1. To start Stay Golden, Cowboy run `npm run dev`
-1. Open [http://localhost:3000](http://localhost:3000) with your browser
 
 ### Tech and Frameworks Used
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
