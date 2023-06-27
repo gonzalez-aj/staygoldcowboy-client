@@ -26,22 +26,15 @@ ___
 ```
 git@github.com:AngieMGonzalez/staygoldcowboy-client.git
 ```
+1. Create a [Firebase](https://firebase.google.com/) project and set up authentication.
 1. Create a `.env` file at the root of the project
 1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
-1. Copy over all of your Firebase values into the `.env` file.
+1. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created `.env` file
+1. Clone and set up the [server side code](https://github.com/AngieMGonzalez/staygoldcowboy-server) to your local machine
 1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
 1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
-1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
-
-1. Create a [Firebase](https://firebase.google.com/) project and set up authentication. 
-1. Create a `.env` file at the root of the project
-1. Copy the environmental variables from Firebase and paste them as the properties of the keys found in your newly created `.env` file
-1. Import sample data found in `data` folder in to the Realtime Database 
-1. From your command line, be in the root directory and `run npm install` OR `npm i` for short
-1. Then, run `npm run prepare`
-1. To start Stay Golden, Cowboy run `npm run dev`
+1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify
+1. To start *Stay Golden, Cowboy*, run `npm run dev` to run your development server
 1. Open [http://localhost:3000](http://localhost:3000) with your browser
 
 ## MVP Features
