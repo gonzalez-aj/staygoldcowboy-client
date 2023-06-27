@@ -2,7 +2,7 @@
 
 ## Getting Started
 ## Server-Side: Python Django
-- [server side code](https://github.com/AngieMGonzalez/staygoldcowboy-server)
+* ### *[server side code](https://github.com/AngieMGonzalez/staygoldcowboy-server)*
 
 ## Starting the Project
 1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
@@ -24,7 +24,7 @@
 - [Project Screenshots](#project-screenshots)
 - [Get Started](#get-started)
 - [Tech and Frameworks Used](#tech-and-frameworks-used)
-- [Auth](#Google-Auth)
+- [Google Auth](#Google-Auth)
 - [Contributors](#contributors)
 ___
 ## Overview
