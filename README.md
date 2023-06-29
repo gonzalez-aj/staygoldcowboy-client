@@ -91,25 +91,17 @@ ArtForm.propTypes = {
 <a href="https://www.tailwindcss.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/tailwindcss.svg" alt="Tailwind CSS" height="50" /></a>  
 </div>
 
-</td><td valign="top" width="33%">
-
-
-
-</td><td valign="top" width="33%">
-
-
-
-</td></tr></table>  
-
-<br/>  
-
 
 ### Linters
+<div align="center">  
 ![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
 ![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
+</div>
 
 ### Google Auth
-<a href="https://firebase.google.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/firebase.png" alt="Firebase" height="50" /></a>
+<div align="center">  
+<a href="https://firebase.google.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/firebase.png" alt="Firebase" height="50" /></a>  
+</div>
 
 ## Contributors
 - [Angie Gonzalez](https://github.com/AngieMGonzalez)
