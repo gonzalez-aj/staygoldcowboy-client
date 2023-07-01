@@ -12,7 +12,6 @@
 - [Code Snippet](#code-snippet)
 - [Project Screenshots](#mvp-project-screenshots)
 - [Tech and Frameworks Used](#tech-and-frameworks-used)
-- [Google Auth](#google-auth)
 - [Contributors](#contributors)
 ___
 ## Overview
@@ -93,14 +92,14 @@ ArtForm.propTypes = {
 <a href="https://www.tailwindcss.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/tailwindcss.svg" alt="Tailwind CSS" height="50" /></a>  
 </div>
 
-### Google Auth
+<div align="center">
+<img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
+<img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" alt="Prettier" />
+</div>
+
 <div align="center">  
 <a href="https://firebase.google.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/firebase.png" alt="Firebase" height="50" /></a>  
 </div>
-
-### Linters
-![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
-![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
 
 ## Contributors
 - [Angie Gonzalez](https://github.com/AngieMGonzalez)
