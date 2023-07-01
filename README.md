@@ -10,9 +10,9 @@
 - [Video Walkthrough of MVP](#video-walkthrough-of-mvp)
 - [Relevant Links](#relevant-links)
 - [Code Snippet](#code-snippet)
-- [Project Screenshots](#project-screenshots)
+- [Project Screenshots](#mvp-project-screenshots)
 - [Tech and Frameworks Used](#tech-and-frameworks-used)
-- [Google Auth](#Google-Auth)
+- [Google Auth](#google-auth)
 - [Contributors](#contributors)
 ___
 ## Overview
@@ -46,6 +46,7 @@ git@github.com:AngieMGonzalez/staygoldcowboy-client.git
 - Fans can filter art by tags
 
 ## Video Walkthrough of MVP
+- https://www.loom.com/share/c0f3bf90f50745d586bc2de0fa3b7ca2?sid=aca90b99-db81-4120-8330-390c45d06ba6 
 
 ## Relevant Links
 - [Figma Wireframes for MVP](https://www.figma.com/file/hOEfUiFeL3cMBTDBOCiQML/Stay-Gold%2C-Cowboy?type=design&node-id=0%3A1&t=ZmzcDnEjDJpCFnqX-1)
@@ -59,7 +60,7 @@ git@github.com:AngieMGonzalez/staygoldcowboy-client.git
 - Assumption: Art can have many tags, and tags can be associated with many pieces of art. 
 
 ## Code Snippet
-Set PropTypes
+Set PropTypes for MVP
 ```
 ArtForm.propTypes = {
   artObj: PropTypes.shape({
@@ -76,7 +77,8 @@ ArtForm.propTypes = {
 ```
 
 
-## Project Screenshots
+## MVP Project Screenshots
+<img width="1000" alt="Stay Gold, Cowboy MVP Home Page" src="https://user-images.githubusercontent.com/114124374/250223135-c65c9156-002c-4cd6-b170-c4c9dcaf4565.png">
 
 ### Tech and Frameworks Used
 <div align="center">  
