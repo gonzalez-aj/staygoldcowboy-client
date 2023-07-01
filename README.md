@@ -103,5 +103,5 @@ ArtForm.propTypes = {
 
 ## Contributors
 - [Angie Gonzalez](https://github.com/AngieMGonzalez)
-- Badges from [Alexandre Sanlim](https://github.com/alexandresanlim/Badges4-README.md-Profile#see-more-repositories) and [Profilinator]([https://github.com/alexandresanlim/Badges4-README.md-Profile#see-more-repositories](https://profilinator.rishav.dev/))
+- Badges from [Alexandre Sanlim](https://github.com/alexandresanlim/Badges4-README.md-Profile#see-more-repositories) and [Profilinator](https://profilinator.rishav.dev/)
 - React/Next.js Django Auth [template from Nashville Software School](https://github.com/codetracker-learning/TEMPLATE-nextjs-withauth-django)
