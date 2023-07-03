@@ -56,7 +56,7 @@ git@github.com:AngieMGonzalez/staygoldcowboy-client.git
 - [MVP ERD made with dbdiagrom.io](https://dbdiagram.io/d/64809033722eb77494910894)
 <img width="500" alt="Stay Gold, Cowboy MVP ERD" src="https://user-images.githubusercontent.com/114124374/247436507-046a0270-51ee-4d4e-95a8-e74861da2cf6.png">
 
-- Assumption: Art can have many tags, and tags can be associated with many pieces of art. 
+- Assumption: Art can have many tags, and tags can be associated with many pieces of art
 
 ## Code Snippet
 Set PropTypes for MVP
@@ -105,3 +105,4 @@ ArtForm.propTypes = {
 - [Angie Gonzalez](https://github.com/AngieMGonzalez)
 - Badges from [Alexandre Sanlim](https://github.com/alexandresanlim/Badges4-README.md-Profile#see-more-repositories) and [Profilinator](https://profilinator.rishav.dev/)
 - React/Next.js Django Auth [template from Nashville Software School](https://github.com/codetracker-learning/TEMPLATE-nextjs-withauth-django)
+- Thank you C62
