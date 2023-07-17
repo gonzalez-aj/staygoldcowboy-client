@@ -12,6 +12,7 @@
 - [Code Snippet](#code-snippet)
 - [Project Screenshots](#mvp-project-screenshots)
 - [Tech and Frameworks Used](#tech-and-frameworks-used)
+- [Future Features](#future-features)
 - [Contributors](#contributors)
 ___
 ## Overview
@@ -100,6 +101,12 @@ ArtForm.propTypes = {
 <div align="center">  
 <a href="https://firebase.google.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/firebase.png" alt="Firebase" height="50" /></a>  
 </div>
+
+
+### Future Features
+- only fans will be able to edit their own uploaded work
+- only admins will be able to delete artwork
+
 
 ## Contributors
 - [Angie Gonzalez](https://github.com/AngieMGonzalez)
