@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Head from 'next/head';
 import { registerUser } from '../utils/auth'; // Update with path to registerUser
 
 function RegisterForm({ user, updateUser }) {
@@ -26,6 +27,7 @@ function RegisterForm({ user, updateUser }) {
 
   return (
     <>
+      <Head><title>Stay Gold, Cowboy</title></Head>
       <br />
       <Form onSubmit={handleSubmit}>
         <Form.Text className="text-white text-5xl pt-3">What&apos;s your name, Partner?</Form.Text>
