@@ -30,7 +30,7 @@ export default function NavBar() {
             <li>
               <a>Art</a>
               <ul className="p-2">
-                <li><Link href="/art">All Art</Link></li>
+                <li><Link href="/videos">Videos</Link></li>
                 <li><Link href="/arts/new">Add Art</Link></li>
               </ul>
             </li>
@@ -46,7 +46,7 @@ export default function NavBar() {
       </div>
       <div className="navbar-center hidden lg:flex text-3xl">
         <ul className="menu menu-horizontal px-1 text-3xl">
-          <li><Link href="/art">Art</Link></li>
+          <li><Link href="/videos">Videos</Link></li>
           <li><Link href="/arts/new">New Art</Link></li>
           <li><Link href="/tags">Tags</Link></li>
           <li><Link href="/tags/new">New Tag</Link></li>
