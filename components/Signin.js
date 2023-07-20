@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Image from 'next/image';
+import Head from 'next/head';
 import { signIn } from '../utils/auth';
 import Hat from '../images/Hat.png';
 
 function Signin() {
   return (
     <>
+      <Head><title>Stay Gold, Cowboy</title></Head>
       <div
         className="text-center flex-column justify-content-center align-content-center"
         style={{
